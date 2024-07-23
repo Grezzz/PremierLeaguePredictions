@@ -21,6 +21,10 @@ func get_formatted_state() -> String:
 	return _format_output()
 
 
+func copy_to_clipboard() -> void:
+	DisplayServer.clipboard_set(_format_output())
+
+
 func _format_output() -> String:
 	var output = ""
 	

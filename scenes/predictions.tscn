@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cwm1qcnfmmcqa"]
+[gd_scene load_steps=32 format=3 uid="uid://cwm1qcnfmmcqa"]
 
 [ext_resource type="Script" path="res://scenes/predictions.gd" id="1_k25mm"]
 [ext_resource type="PackedScene" uid="uid://dt4q6ooaa1fa2" path="res://scenes/team.tscn" id="2_kqfpf"]
@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://ddt7vu35ni1s0" path="res://graphics/teams/west-ham-united.8031b8c4c7910b77fc9a.svg" id="21_h4kyg"]
 [ext_resource type="Texture2D" uid="uid://b4okayrx8chtj" path="res://graphics/teams/wolverhampton-wanderers.11a9da51bfda62cdae72.svg" id="22_l82fn"]
 [ext_resource type="PackedScene" uid="uid://dsyfun1j1svxi" path="res://scenes/ball_bin.tscn" id="24_ga0dd"]
-[ext_resource type="PackedScene" uid="uid://jseq8vwqaecr" path="res://scenes/show_text_button.tscn" id="26_3pk8k"]
+[ext_resource type="PackedScene" uid="uid://jseq8vwqaecr" path="res://scenes/copy_text_button.tscn" id="26_3pk8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_biix0"]
 size = Vector2(1920, 546)
@@ -38,6 +38,9 @@ size = Vector2(382, 1766)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps4ur"]
 size = Vector2(451, 1667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2j50"]
+size = Vector2(237, 557)
 
 [node name="Predictions" type="Node2D"]
 script = ExtResource("1_k25mm")
@@ -101,61 +104,51 @@ modulate_color = Color(0, 1, 0, 1)
 rank = 7
 
 [node name="8th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(-701, -295)
 label_text = "8th"
 rank = 8
 
 [node name="9th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(-430, -290)
 label_text = "9th"
 rank = 9
 
 [node name="10th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(-210, -269)
 label_text = "10th"
 rank = 10
 
 [node name="11th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(290, -235)
 label_text = "11th"
 rank = 11
 
 [node name="12th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(622, -169)
 label_text = "12th"
 rank = 12
 
 [node name="13th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(863, -123)
 label_text = "13th"
 rank = 13
 
 [node name="14th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(-697, -116)
 label_text = "14th"
 rank = 14
 
 [node name="15th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(-491, -148)
 label_text = "15th"
 rank = 15
 
 [node name="16th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(-301, -142)
 label_text = "16th"
 rank = 16
 
 [node name="17th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(-38, 133)
 label_text = "17th"
 rank = 17
@@ -315,6 +308,13 @@ collision_mask = 0
 position = Vector2(1160.5, 22.5)
 shape = SubResource("RectangleShape2D_ps4ur")
 
+[node name="TextBoxBlock" type="StaticBody2D" parent="Walls"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TextBoxBlock"]
+position = Vector2(841.5, 258.5)
+shape = SubResource("RectangleShape2D_i2j50")
+
 [node name="Decoration" type="Node2D" parent="."]
 
 [node name="Trophy" type="Sprite2D" parent="Decoration"]
@@ -365,5 +365,3 @@ text = "1
 18
 19
 20"
-
-[connection signal="toggled" from="ShowTextButton" to="." method="_on_show_text_button_toggled"]

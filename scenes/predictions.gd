@@ -6,7 +6,6 @@ extends Node2D
 
 
 func _ready():
-	ranks_as_text.hide()
 	for team: Team in teams.get_children():
 		team.team_grabbed.connect(_team_grabbed)
 		team.team_released.connect(_team_released)
