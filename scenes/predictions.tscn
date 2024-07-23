@@ -34,10 +34,10 @@ size = Vector2(1920, 546)
 size = Vector2(1920, 335)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkltp"]
-size = Vector2(382, 1080)
+size = Vector2(382, 1766)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps4ur"]
-size = Vector2(451, 1080)
+size = Vector2(451, 1667)
 
 [node name="Predictions" type="Node2D"]
 script = ExtResource("1_k25mm")
@@ -305,14 +305,14 @@ position = Vector2(-960, 0)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left"]
-position = Vector2(-166, 0)
+position = Vector2(-166, -34)
 shape = SubResource("RectangleShape2D_fkltp")
 
 [node name="Right" type="StaticBody2D" parent="Walls"]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right"]
-position = Vector2(1160.5, 0)
+position = Vector2(1160.5, 22.5)
 shape = SubResource("RectangleShape2D_ps4ur")
 
 [node name="Decoration" type="Node2D" parent="."]
