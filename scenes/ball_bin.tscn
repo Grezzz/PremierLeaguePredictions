@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsyfun1j1svxi"]
+
+[ext_resource type="Texture2D" uid="uid://pnbxb2ec77ji" path="res://graphics/ball_bin.aseprite" id="1_247kp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_giok8"]
+size = Vector2(5, 500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0uh6"]
+size = Vector2(160, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1gpv"]
+size = Vector2(5, 500)
+
+[node name="BallBin" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-80, 0)
+shape = SubResource("RectangleShape2D_giok8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 250)
+shape = SubResource("RectangleShape2D_j0uh6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(80, 0)
+shape = SubResource("RectangleShape2D_y1gpv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_247kp")

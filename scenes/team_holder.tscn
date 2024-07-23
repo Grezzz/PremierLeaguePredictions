@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://suauire0vkm6"]
+
+[ext_resource type="Script" path="res://scenes/team_holder.gd" id="1_4jvel"]
+[ext_resource type="Texture2D" uid="uid://7omiips65oxk" path="res://graphics/team_holder.aseprite" id="1_8sjfg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dudj6"]
+size = Vector2(80, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boei7"]
+size = Vector2(4, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpl4l"]
+size = Vector2(4, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8in1e"]
+size = Vector2(75, 36)
+
+[node name="TeamHolder" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_4jvel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_dudj6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-38, -2)
+shape = SubResource("RectangleShape2D_boei7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(38, -2)
+shape = SubResource("RectangleShape2D_xpl4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8sjfg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = 12.0
+offset_right = 20.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 24
+text = "1st"
+horizontal_alignment = 1
+
+[node name="TeamDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeamDetector"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_8in1e")
+
+[connection signal="body_entered" from="TeamDetector" to="." method="_on_team_detector_body_entered"]
+[connection signal="body_exited" from="TeamDetector" to="." method="_on_team_detector_body_exited"]

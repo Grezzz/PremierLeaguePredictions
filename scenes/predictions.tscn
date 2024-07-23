@@ -1,0 +1,369 @@
+[gd_scene load_steps=31 format=3 uid="uid://cwm1qcnfmmcqa"]
+
+[ext_resource type="Script" path="res://scenes/predictions.gd" id="1_k25mm"]
+[ext_resource type="PackedScene" uid="uid://dt4q6ooaa1fa2" path="res://scenes/team.tscn" id="2_kqfpf"]
+[ext_resource type="Texture2D" uid="uid://bci8vk2ci3wiy" path="res://graphics/background.jpeg" id="2_tqvn8"]
+[ext_resource type="Texture2D" uid="uid://b5t6ksg0uojqf" path="res://graphics/teams/afc-bournemouth.06b040f58cc005d437da.svg" id="3_4r1a3"]
+[ext_resource type="PackedScene" uid="uid://suauire0vkm6" path="res://scenes/team_holder.tscn" id="3_p4yfx"]
+[ext_resource type="Texture2D" uid="uid://7c3gr76dtcqw" path="res://graphics/teams/arsenal.b8d11b6a4019ac9174ad.svg" id="4_chi38"]
+[ext_resource type="Texture2D" uid="uid://bm37vf38yblrc" path="res://graphics/teams/aston-villa.754b3fa019c3b800b52d.svg" id="5_xfden"]
+[ext_resource type="Texture2D" uid="uid://dr5ycog1l667b" path="res://graphics/teams/brentford.30131acd7824e12e9f06.svg" id="6_bco2g"]
+[ext_resource type="Texture2D" uid="uid://dqq36qm5wy8aw" path="res://graphics/teams/brighton-and-hove-albion.894064a4c3928f88adaf.svg" id="7_wu34f"]
+[ext_resource type="Texture2D" uid="uid://ciaxu83lvbc13" path="res://graphics/teams/chelsea.065d90cfec11cce54928.svg" id="8_fmky8"]
+[ext_resource type="Texture2D" uid="uid://gv2r3b34i8fe" path="res://graphics/teams/crystal-palace.d1d34eb505c894bb71d2.svg" id="9_kjjof"]
+[ext_resource type="Texture2D" uid="uid://dfevmdd6q5f48" path="res://graphics/teams/everton.1c2e4b8f74caea608676.svg" id="10_ximi2"]
+[ext_resource type="Texture2D" uid="uid://bcy6h45uaogek" path="res://graphics/teams/fulham.32e357c80f09ea893dd6.svg" id="11_x7pgr"]
+[ext_resource type="Texture2D" uid="uid://cld2os1ov0m3r" path="res://graphics/teams/ipswich-town.b0a450a1f316743cd28e.svg" id="12_mjtnl"]
+[ext_resource type="Texture2D" uid="uid://b4rnydw67mybd" path="res://graphics/teams/leicester-city.84a92b176cfdeb9b12d0.svg" id="13_nm02m"]
+[ext_resource type="Texture2D" uid="uid://dd0ocnemfhes5" path="res://graphics/teams/Liverpool_FC.svg.png" id="14_t8qej"]
+[ext_resource type="Texture2D" uid="uid://bqjpn8338j232" path="res://graphics/teams/manchester-city.ac0fd3e437f9c81828a9.svg" id="15_0cchv"]
+[ext_resource type="Texture2D" uid="uid://b3sy6i6ou47tt" path="res://graphics/teams/Manchester_United_FC_crest.svg.png" id="16_s577k"]
+[ext_resource type="Texture2D" uid="uid://du5xhhrgpx0t7" path="res://graphics/teams/Newcastle_United_Logo.svg.png" id="17_w8udp"]
+[ext_resource type="Texture2D" uid="uid://03ecir2xg6ts" path="res://graphics/teams/nottingham-forest.8152a495d9e1e6ca842d.svg" id="18_c3xik"]
+[ext_resource type="Texture2D" uid="uid://n3ol3oduo62t" path="res://graphics/teams/southampton.bce3dc16aca543921473.svg" id="19_xi7wp"]
+[ext_resource type="Texture2D" uid="uid://b3h3qr761nrbk" path="res://graphics/teams/tottenham-hotspur.0bfa51c9f1f0615c9fb6.svg" id="20_rthyn"]
+[ext_resource type="Texture2D" uid="uid://ddt7vu35ni1s0" path="res://graphics/teams/west-ham-united.8031b8c4c7910b77fc9a.svg" id="21_h4kyg"]
+[ext_resource type="Texture2D" uid="uid://b4okayrx8chtj" path="res://graphics/teams/wolverhampton-wanderers.11a9da51bfda62cdae72.svg" id="22_l82fn"]
+[ext_resource type="PackedScene" uid="uid://dsyfun1j1svxi" path="res://scenes/ball_bin.tscn" id="24_ga0dd"]
+[ext_resource type="PackedScene" uid="uid://jseq8vwqaecr" path="res://scenes/show_text_button.tscn" id="26_3pk8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_biix0"]
+size = Vector2(1920, 546)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3ds6"]
+size = Vector2(1920, 335)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkltp"]
+size = Vector2(382, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps4ur"]
+size = Vector2(451, 1080)
+
+[node name="Predictions" type="Node2D"]
+script = ExtResource("1_k25mm")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(4.19617e-05, -2.47955e-05)
+scale = Vector2(1.07143, 1.05469)
+texture = ExtResource("2_tqvn8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TeamHolders" type="Node2D" parent="."]
+
+[node name="1st" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(1, 0.847059, 0, 1)
+position = Vector2(52, -178)
+label_text = "1st"
+modulate_color = Color(1, 0.847059, 0, 1)
+rank = 1
+
+[node name="2nd" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(-103, -430)
+label_text = "2nd"
+modulate_color = Color(0, 0, 1, 1)
+rank = 2
+
+[node name="3rd" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(-19, -413)
+label_text = "3rd"
+modulate_color = Color(0, 0, 1, 1)
+rank = 3
+
+[node name="4th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(69, -396)
+label_text = "4th"
+modulate_color = Color(0, 0, 1, 1)
+rank = 4
+
+[node name="5th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(1, 0.588235, 0, 1)
+position = Vector2(185, -382)
+label_text = "5th"
+modulate_color = Color(1, 0.588235, 0, 1)
+rank = 5
+
+[node name="6th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(1, 0.588235, 0, 1)
+position = Vector2(272, -373)
+label_text = "6th"
+modulate_color = Color(1, 0.588235, 0, 1)
+rank = 6
+
+[node name="7th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(373, -368)
+label_text = "7th"
+modulate_color = Color(0, 1, 0, 1)
+rank = 7
+
+[node name="8th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-701, -295)
+label_text = "8th"
+rank = 8
+
+[node name="9th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-430, -290)
+label_text = "9th"
+rank = 9
+
+[node name="10th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-210, -269)
+label_text = "10th"
+rank = 10
+
+[node name="11th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(290, -235)
+label_text = "11th"
+rank = 11
+
+[node name="12th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(622, -169)
+label_text = "12th"
+rank = 12
+
+[node name="13th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(863, -123)
+label_text = "13th"
+rank = 13
+
+[node name="14th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-697, -116)
+label_text = "14th"
+rank = 14
+
+[node name="15th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-491, -148)
+label_text = "15th"
+rank = 15
+
+[node name="16th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-301, -142)
+label_text = "16th"
+rank = 16
+
+[node name="17th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-38, 133)
+label_text = "17th"
+rank = 17
+
+[node name="18th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0.392157, 0, 0, 1)
+position = Vector2(504, 68)
+label_text = "18th"
+modulate_color = Color(0.392157, 0, 0, 1)
+rank = 18
+
+[node name="19th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0.392157, 0, 0, 1)
+position = Vector2(-349, 229)
+label_text = "19th"
+modulate_color = Color(0.392157, 0, 0, 1)
+rank = 19
+
+[node name="20th" parent="TeamHolders" instance=ExtResource("3_p4yfx")]
+modulate = Color(0.392157, 0, 0, 1)
+position = Vector2(578, 221)
+label_text = "20th"
+modulate_color = Color(0.392157, 0, 0, 1)
+rank = 20
+
+[node name="Teams" type="Node2D" parent="."]
+
+[node name="AFCBournemouth" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-896, 479)
+team_name = "AFC Bournemouth"
+badge_texture = ExtResource("3_4r1a3")
+
+[node name="Arsenal" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-813, 478)
+team_name = "Arsenal"
+badge_texture = ExtResource("4_chi38")
+
+[node name="AstonVilla" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-851, -23)
+team_name = "Aston Villa"
+badge_texture = ExtResource("5_xfden")
+
+[node name="Brentford" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-804, -65)
+team_name = "Brentford"
+badge_texture = ExtResource("6_bco2g")
+
+[node name="Brighton" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-853, 435)
+team_name = "Brighton & Hove Albion"
+badge_texture = ExtResource("7_wu34f")
+
+[node name="Chelsea" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-809, 386)
+team_name = "Chelsea"
+badge_texture = ExtResource("8_fmky8")
+
+[node name="CrystalPalace" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-898, 394)
+team_name = "Crystal Palace"
+badge_texture = ExtResource("9_kjjof")
+
+[node name="Everton" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-857, 343)
+team_name = "Everton"
+badge_texture = ExtResource("10_ximi2")
+
+[node name="Fulham" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-812, 301)
+team_name = "Fulham"
+badge_texture = ExtResource("11_x7pgr")
+
+[node name="Ipswich" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-899, 297)
+team_name = "Ipswich Town"
+badge_texture = ExtResource("12_mjtnl")
+
+[node name="Leicester" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-853, 255)
+team_name = "Leicester City"
+badge_texture = ExtResource("13_nm02m")
+
+[node name="Liverpool" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-809, 212)
+team_name = "Liverpool"
+badge_texture = ExtResource("14_t8qej")
+
+[node name="ManCity" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-897, 210)
+team_name = "Manchester City"
+badge_texture = ExtResource("15_0cchv")
+
+[node name="ManUtd" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-851, 166)
+team_name = "Manchester United"
+badge_texture = ExtResource("16_s577k")
+
+[node name="Newcastle" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-809, 119)
+team_name = "Newcastle United"
+badge_texture = ExtResource("17_w8udp")
+
+[node name="NottmForest" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-897, 122)
+team_name = "Nottingham Forest"
+badge_texture = ExtResource("18_c3xik")
+
+[node name="Southampton" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-899, -62)
+team_name = "Southampton"
+badge_texture = ExtResource("19_xi7wp")
+
+[node name="Tottenham" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-855, 72)
+team_name = "Tottenham Hotspur"
+badge_texture = ExtResource("20_rthyn")
+
+[node name="WestHam" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-812, 27)
+team_name = "West Ham United"
+badge_texture = ExtResource("21_h4kyg")
+
+[node name="Wolves" parent="Teams" instance=ExtResource("2_kqfpf")]
+position = Vector2(-897, 18)
+team_name = "Wolverhampton Wanderers"
+badge_texture = ExtResource("22_l82fn")
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Top" type="StaticBody2D" parent="Walls"]
+position = Vector2(0, -540)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top"]
+position = Vector2(0, -248)
+shape = SubResource("RectangleShape2D_biix0")
+
+[node name="Bottom" type="StaticBody2D" parent="Walls"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom"]
+position = Vector2(0, 682.5)
+shape = SubResource("RectangleShape2D_d3ds6")
+
+[node name="Left" type="StaticBody2D" parent="Walls"]
+position = Vector2(-960, 0)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left"]
+position = Vector2(-166, 0)
+shape = SubResource("RectangleShape2D_fkltp")
+
+[node name="Right" type="StaticBody2D" parent="Walls"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right"]
+position = Vector2(1160.5, 0)
+shape = SubResource("RectangleShape2D_ps4ur")
+
+[node name="Decoration" type="Node2D" parent="."]
+
+[node name="Trophy" type="Sprite2D" parent="Decoration"]
+
+[node name="BallBin" parent="." instance=ExtResource("24_ga0dd")]
+position = Vector2(-855, 267)
+
+[node name="ShowTextButton" parent="." instance=ExtResource("26_3pk8k")]
+offset_left = 725.0
+offset_top = -507.0
+offset_right = 925.0
+offset_bottom = -467.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 724.0
+offset_top = -19.0
+offset_right = 950.0
+offset_bottom = 529.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="RanksAsText" type="TextEdit" parent="MarginContainer"]
+layout_mode = 2
+text = "1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20"
+
+[connection signal="toggled" from="ShowTextButton" to="." method="_on_show_text_button_toggled"]
